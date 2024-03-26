@@ -256,7 +256,7 @@ MoPortfolio.Modules.ThemeModule = (function() {
   submitButton.onclick = function() {
     var password = document.getElementById("passwordInput").value;
 
-    if (password === "pass123") {
+    if (password === "raya") {
       $('#passwordModal').modal('hide'); // Hide the modal using jQuery
       $('body').removeClass('modal-open'); // Remove the class that disables scrolling
       $('.modal-backdrop').remove(); // Remove the backdrop
@@ -264,6 +264,26 @@ MoPortfolio.Modules.ThemeModule = (function() {
       alert("Incorrect password. Please try again.");
     }
   }
+
+  document.getElementById("submitButton").addEventListener("click", function() {
+    var password = document.getElementById("passwordInput").value;
+    // Add your validation logic here
+    if (password === "raya") {
+      // Password is correct, allow submission
+      console.log("Password matched. Allowing submission.");
+    } else {
+      // Password is incorrect, prevent submission and show error message
+      console.log("Password incorrect. Please try again.");
+    }
+  });
+
+  // Prevent user from removing input field content
+  document.getElementById("passwordInput").addEventListener("input", function(event) {
+    var password = event.target.value;
+    if (password === "") {
+      event.preventDefault();
+    }
+  });
 
   // When the user clicks anywhere outside of the modal, do close it
   window.onclick = function(event) {
