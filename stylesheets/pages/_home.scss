@@ -1,0 +1,304 @@
+//main: ../main.scss
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #fff;
+}
+
+.container {
+  width: 1638px;
+}
+
+.main-content {
+  display: flex;
+  padding: 64px;
+  .content-wrap {
+    margin: 0 auto auto auto;
+    width: 100%;
+
+    .profile-wrap {
+      .image-wrap {
+        margin-bottom: 20px;
+        .mo-image {
+        border: 1px solid $mid-gray;
+        }
+      }
+
+      .mo-name {
+        margin-bottom: 23px;
+        font-family: $text-avenir-heavy;
+        font-size: 20px;
+        line-height: 23px;
+      }
+
+      .mo-panel {
+        margin-bottom: 23px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        h4 {
+          font-family: $text-avenir-heavy;
+          font-size: 12px;
+          line-height: 14px;
+        }
+
+        p {
+          margin-bottom: 9px;
+          font-family: $text-avenir-light;
+          font-size: 12px;
+          line-height: 14px;
+          color: $darker-gray;
+        }
+        
+        .panel-title {
+          margin-bottom: 3px;
+        }
+
+        .panel-description {
+          font-size: x-small;
+        }
+      }
+    }
+
+    .main-grid {
+      margin-top: -12px;
+      .grid-row {
+        .my-gallery {
+          .gallery-items {
+            .grid-figure {
+              max-width: 424px;
+              margin-bottom: 0;
+              padding: 12px;
+              a {
+                display: flex;
+                background-color: #fff;
+                min-height: 1px;
+                max-height: 300px;
+                border: 1px solid $dark-gray;
+                border-radius: 4px;
+                -webkit-box-shadow: 0 2px 18px 0 $dark-gray;
+                -moz-box-shadow: 0 2px 18px 0 $dark-gray;
+                box-shadow: 0 2px 18px 0 $dark-gray;
+                transition: all 0.2s ease-in-out;
+                -webkit-transition: all 0.2s ease-in-out;
+                overflow: hidden;
+
+                &:hover {
+                  -webkit-box-shadow: 0 9px 18px 0 rgba(191,191,191,0.5);
+                  -moz-box-shadow: 0 9px 18px 0 rgba(191,191,191,0.5);
+                  box-shadow: 0 9px 18px 0 rgba(191,191,191,0.5);
+                  -webkit-transform: translateY(-5px);
+                  transform: translateY(-5px);
+                }
+
+                .gc-image {
+                  position: block;
+                  display: inline-block;
+                  object-fit: cover;
+                  width: 100%;
+                  height: 100%;
+                }
+
+                .grid-label {
+                  position: absolute;
+                  padding: 8px 24px;
+                  font-family: "Avenir Light";
+                  font-size: small;
+                  color: #ffff;
+                  background-color: #939393;
+                  border-radius: 4px 0px 4px 0px ;
+                  z-index: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#EmailModal {
+  margin-top: 10%;
+  .modal-dialog {
+    .modal-content {
+      .modal-body  {
+        padding-top: 0px;
+        margin: 20px;
+      }
+      .modal-body p {
+        font-size: 16px !important;
+      }
+    }
+  }
+}
+
+#passwordModal {
+  margin-top: 10%;
+  .modal-dialog {
+    .modal-content {
+      .modal-body  {
+        // background-color: aqua;
+        padding-top: 0px;
+        margin: 20px;
+        p {
+          font-size: 20px;
+          font-weight: 700;
+          color: #292b2c;
+        }
+        
+        .modal-input {
+          display: grid;
+          input {
+            font-size: 14px;
+            color: #939393;
+            padding: 8px 8px;
+            margin-right: 12px;
+          }
+        }
+      
+      }
+    }
+   }
+}
+
+/* Mobile Portrait */
+@media screen and (max-width: 567px) {
+  .container {
+    width: unset;
+  }
+
+  .main-content {
+    padding: 64px 15px;
+    .content-wrap {
+      .profile-wrap {
+        margin-bottom: 64px;
+        text-align: center;
+      }
+      .main-grid {
+        .grid-row {
+          .my-gallery {
+            .gallery-items {
+              justify-content: space-around;
+
+              .grid-figure {
+                max-width: unset;
+                a {
+                  min-height: unset;
+                  .gc-image {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Mobile Landscape */
+@media (min-width: 568px) and (max-width: 767px) {
+  .container {
+    width: unset;
+  }
+
+  .main-content {
+    padding: 64px 30px;
+    .content-wrap {
+      .profile-wrap {
+        margin-bottom: 64px;
+        text-align: center;
+      }
+      .main-grid {
+        .grid-row {
+          .my-gallery {
+            .gallery-items {
+              justify-content: space-around;
+
+              .grid-figure {
+                margin-left: auto;
+                margin-right: auto;
+                a {
+                  min-height: unset;
+                  .gc-image {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* iPad Portrait */
+@include respond-to(md) {
+  .container {
+    width: 720px;
+  }
+
+  .main-content {
+    .content-wrap {
+      // Texts from profile-wrap overlaps with images 
+      // .profile-wrap {
+      //   position: fixed;
+      // }
+
+      .main-grid {
+        .grid-row {
+          .my-gallery {
+            .gallery-items {
+              justify-content: space-around;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* iPad Landscape */
+@include respond-to(lg) {
+  .container {
+    width: 960px;
+  }
+
+  .main-content {
+    .content-wrap {
+      // Texts from profile-wrap overlaps with images 
+      // .profile-wrap {
+      //   position: fixed;
+      // }
+      .main-grid {
+        .grid-row {
+          .my-gallery {
+            .gallery-items {
+              justify-content: flex-start;
+              .grid-figure {
+                a {
+                  min-height: unset;
+                  max-height: 300px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
