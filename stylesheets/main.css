@@ -11435,7 +11435,7 @@ body {
   color: #368aed;
 }
 
-.pswp__bg {
+.pswp__scroll-wrap {
   background-color: rgba(0, 0, 0, 0.92); /* Set the background color */
 }
 
@@ -11468,10 +11468,8 @@ body {
   line-height: 20px;
 }
 .pswp__dynamic-caption h4 {
-  /* color: green; */
   font-size: 20px;
   font-weight: bold;
-  /* font-weight: 550; */
 }
 .pswp__dynamic-caption span {
   font-size: 20px;
@@ -11479,6 +11477,10 @@ body {
 }
 .pswp__dynamic-caption p {
   font-size: 13px;
+}
+
+.item-content {
+  padding-left: 20px;
 }
 
 @media screen and (max-width: 767px) {
@@ -11737,6 +11739,7 @@ body {
   }
   .main-content {
     padding: 64px 15px;
+    /* bottom: 20px; */
   }
   .main-content .content-wrap .profile-wrap {
     margin-bottom: 64px;
@@ -11755,9 +11758,9 @@ body {
     width: 100%;
     height: 100%;
   }
-
-
-  .pswp .pswp__scroll-wrap  button{
+  
+  
+  .pswp .pswp__scroll-wrap  button {
     opacity: 0;
     pointer-events: auto;
   }
@@ -11770,10 +11773,19 @@ body {
     opacity: 0;
   }
 
+  .item-content {
+    padding-left: 0px;
+  }
+
+  .pswp__item {
+    height: 94.5%;
+  }
+
   .pswp__dynamic-caption {
     color: #fff;
     width: 100%;
     line-height: 20px;
+    padding-left: 20px;
     
   }
   .pswp__dynamic-caption h4 {
