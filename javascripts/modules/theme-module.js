@@ -242,9 +242,9 @@ MoPortfolio.Modules.ThemeModule = (function() {
   }
 
   // trigger's the password modal to open once load
-  $(document).ready(function(){
-    $('#passwordModal').modal('show');
-  });
+  // $(document).ready(function(){
+  //   $('#passwordModal').modal('show');
+  // });
 
   // Get the modal
   var modal = document.getElementById("passwordModal");
@@ -296,7 +296,7 @@ MoPortfolio.Modules.ThemeModule = (function() {
   // Public Methods //
   ///////////////////
   var init = function() {
-    _photoSwipe();
+    // _photoSwipe();
     _revealOnScroll();
     _emailmodal();
   };
