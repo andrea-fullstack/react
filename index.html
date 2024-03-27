@@ -621,31 +621,23 @@
     import PhotoSwipeDynamicCaption from './src/photoswipe-dynamic-caption-plugin.esm.js';
     import PhotoSwipeVideoPlugin from './src/index.js';
 
-    // const smallScreenPadding = {
-    //     top: 50, bottom: 0, left: 0, right: 0,
-    //   };
-    //   const largeScreenPadding = {
-    //     top: 0, bottom: 40, left: 0, right: 0
-    //   };
+    const smallScreenPadding = {
+        top: 0, bottom: 20, left: 0, right: 0,
+      };
+      const largeScreenPadding = {
+        top: 0, bottom: 40, left: 0, right: 0
+      };
 
     const lightbox = new PhotoSwipeLightbox({
       gallery: '.my-gallery',
       children: 'figure',
       pswpModule: () => import('https://unpkg.com/photoswipe/dist/photoswipe.esm.js'),
 
-      // padding: {
-      //   top: 100,
-      //   bottom: 50,
-      //   left: 0,
-      //   right: 0
-      // },
-
-        //Mobile
-    //   paddingFn: (viewportSize) => {
-    //   return {
+      paddingFn: (viewportSize) => {
+      return {
           
-    //     }
-    // },
+        }
+    },
       
       
       // Recommended PhotoSwipe options for this plugin
@@ -658,40 +650,12 @@
     const videoPlugin = new PhotoSwipeVideoPlugin(lightbox, {
       
     });
-
-    lightbox.on('uiRegister', function() {
-  lightbox.pswp.ui.registerElement({
-    name: 'custom-caption',
-    order: 9,
-    isButton: false,
-    appendTo: 'root',
-    html: 'Caption text',
-    onInit: (el, pswp) => {
-      lightbox.pswp.on('change', () => {
-        const currSlideElement = lightbox.pswp.currSlide.data.element;
-        let captionHTML = '';
-        if (currSlideElement) {
-          const hiddenCaption = currSlideElement.querySelector('.hidden-caption-content');
-          if (hiddenCaption) {
-            // get caption from element with class hidden-caption-content
-            captionHTML = hiddenCaption.innerHTML;
-          } else {
-            // get caption from alt attribute
-            captionHTML = currSlideElement.querySelector('img').getAttribute('alt');
-          }
-          }
-        el.innerHTML = captionHTML || '';
-       });
-      }
-    });
-  });
-
-    
+   
 
     const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {
       mobileLayoutBreakpoint: 700,
       type: 'below',
-      mobileCaptionOverlapRatio: 1
+      mobileCaptionOverlapRatio: 2
     });
 
 
