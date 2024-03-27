@@ -11444,13 +11444,13 @@ body {
 }
 
 .pswp .pswp__scroll-wrap .pswp__button--arrow--prev {
-  left: 530px; /* Adjust this value as needed */
-  z-index: -1; /* Ensure the buttons appear behind the image */
+  left: 480px; /* Adjust this value as needed */
+  z-index: 1; /* Ensure the buttons appear behind the image */
 }
 
 .pswp .pswp__scroll-wrap .pswp__button--arrow--next {
-  right: 530px; /* Adjust this value as needed */
-  z-index: -1; /* Ensure the buttons appear behind the image */
+  right: 480px; /* Adjust this value as needed */
+  z-index: 1; /* Ensure the buttons appear behind the image */
 }
 
 .pswp .pswp__scroll-wrap  button{
