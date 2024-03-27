@@ -11435,6 +11435,26 @@ body {
   color: #368aed;
 }
 
+.pswp__dynamic-caption {
+  color: #fff;
+  width: 100%;
+  font-size: 13px;
+  line-height: 20px;
+}
+.pswp__dynamic-caption h4 {
+  /* color: green; */
+  font-size: 20px;
+  font-weight: bold;
+  /* font-weight: 550; */
+}
+.pswp__dynamic-caption span {
+  font-size: 20px;
+  font-weight: 300;
+}
+.pswp__dynamic-caption p {
+  font-weight: 550;
+}
+
 @media screen and (max-width: 767px) {
   .pswp .pswp__scroll-wrap .pswp__ui .pswp__top-bar .pswp__button--close {
     right: 0;
